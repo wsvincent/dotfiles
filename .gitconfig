@@ -1,3 +1,8 @@
+# Custom settings
+[user]
+	name = Will Vincent
+	email = william.s.vincent@gmail.com
+
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -23,6 +28,21 @@
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
+	
+	# Custom settings
+	st = status -sb
+	ci = commit
+	ic = commit
+	d = diff
+	rb = rebase 
+	co = "!f(){ git checkout \"$@\" && git submodule update --init --recursive --quiet; }; f"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	unstage = reset HEAD
+	subdate = submodule update --init --recursive --quiet
+	ca = commit --amend
+	caa = commit -a --amend -C HEAD
+	up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+	delbranch = "!f(){ array=( $@ ); for i in \"${array[@]}\"; do echo "Deleting branch $i..."; git branch -D \"$i\"; git push origin :\"$i\"; done; }; f"
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -34,6 +54,11 @@
 	attributesfile = ~/.gitattributes
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	
+	# Custom settings
+	quotepath = false
+	autocrlf = input
+	pager = less -FRSX
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
