@@ -1,0 +1,12 @@
+# Ports
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:~/bin:$PATH
+
+# Python packages
+export PATH=${PATH}:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin
+
+# Gems
+export PATH=${PATH}:/Library/Ruby/Gems/1.8/gems
+
+# bundle bin
+export PATH=${HOME}/.rbenv/versions/1.9.3-p392/bin:${PATH}
+export PATH=./bin:${PATH}
