@@ -20,6 +20,10 @@ alias s="subl ."
 alias o="open"
 alias oo="open ."
 
+# Custom aliases
+alias cds="cd ~/Sites"
+alias s="cd ~/Sites"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
