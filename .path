@@ -10,3 +10,6 @@ export PATH=${PATH}:/Library/Ruby/Gems/1.8/gems
 # bundle bin
 export PATH=${HOME}/.rbenv/versions/1.9.3-p392/bin:${PATH}
 export PATH=./bin:${PATH}
+
+# Postgresapp
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
