@@ -41,5 +41,7 @@ which grunt &> /dev/null && eval "$(grunt --completion=bash)"
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-# Load virtualenvwrapper on launch
-source /Users/wsv/.virtualenvs
+# Use virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
