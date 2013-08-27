@@ -24,6 +24,7 @@ alias oo="open ."
 alias cds="cd ~/Sites"
 alias s="cd ~/Sites"
 alias ll="ls -alrth"
+alias cp="cp -i" # set cp to be interactive by default
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
