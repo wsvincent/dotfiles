@@ -23,6 +23,7 @@ alias oo="open ."
 # Custom aliases
 alias cds="cd ~/Sites"
 alias s="cd ~/Sites"
+alias ll="ls -alrth"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
