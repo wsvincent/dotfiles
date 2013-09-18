@@ -7,27 +7,27 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias g="git"
+alias gd="cd ~/Google Drive"
 alias h="history"
 alias j="jobs"
-alias v="vim"
-alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
 
 # Custom aliases
 alias cds="cd ~/Sites"
-alias s="cd ~/Sites"
+alias cdd="cd ~/Sites/dotfiles"
 alias ll="ls -alrth"
 alias cp="cp -i" # set cp to be interactive by default
 alias mv="mv -i" # set mv to be interactive by default
 alias rm="rm -i" # set rm to be interactive by default
 
+# Database shortcuts
 alias pgup="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgdown="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
