@@ -1,11 +1,16 @@
-# Node.js
-export PATH=/usr/local/share/npm/bin:$PATH
-
 # Ports
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:~/bin:$PATH
 
 # Python packages
 export PATH=${PATH}:/System/Library/Frameworks/Python.framework/Versions/2.7/bin
+
+
+# Node.js
+export PATH=/usr/local/share/npm/bin:$PATH
+
+
+
+
 
 # Gems
 export PATH=${PATH}:/Library/Ruby/Gems/1.8/gems
