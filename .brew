@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -30,3 +32,12 @@ brew install tree
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+# Install iTerm
+url="https://iterm2.googlecode.com/files/iTerm2_v1_0_0.zip"
+zip="${url##http*/}"
+download_dir="/tmp/iterm2-$$"
+mkdir -p "$download_dir"
+curl -L "$url" -o "${download_dir}/${zip}"
+unzip -q "${download_dir}/${zip}" -d /Applications/
+rm -rf "$download_dir"
