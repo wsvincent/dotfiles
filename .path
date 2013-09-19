@@ -1,4 +1,4 @@
-# Ports
+# Homebrew paths
 export PATH=${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/sbin:$PATH
 
 # Python packages
