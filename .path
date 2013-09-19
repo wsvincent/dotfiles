@@ -1,16 +1,11 @@
 # Ports
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:~/bin:$PATH
+export PATH=${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/sbin:$PATH
 
 # Python packages
-export PATH=${PATH}:/System/Library/Frameworks/Python.framework/Versions/2.7/bin
-
+export PATH=${PATH}:/usr/local/Cellar/python/2.7.5/bin
 
 # Node.js
 export PATH=/usr/local/share/npm/bin:$PATH
-
-
-
-
 
 # Gems
 export PATH=${PATH}:/Library/Ruby/Gems/1.8/gems
