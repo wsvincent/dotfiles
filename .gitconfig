@@ -28,13 +28,15 @@
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
-	
+
 	# Custom settings
 	st = status -sb
 	ci = commit
 	ic = commit
+	cp = cherry-pick
 	d = diff
-	rb = rebase 
+	dc = diff --cached
+	rb = rebase
 	co = "!f(){ git checkout \"$@\" && git submodule update --init --recursive --quiet; }; f"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	unstage = reset HEAD
@@ -44,6 +46,14 @@
 	up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
 	delbranch = "!f(){ array=( $@ ); for i in \"${array[@]}\"; do echo "Deleting branch $i..."; git branch -D \"$i\"; git push origin :\"$i\"; done; }; f"
 
+	# http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
@@ -52,9 +62,10 @@
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
-	
+
 	# Custom settings
 	quotepath = false
 	autocrlf = input
@@ -62,7 +73,12 @@
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
-	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -79,6 +95,8 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	# Custom settings
+	tool = opendiff
 
 # Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
@@ -100,4 +118,5 @@
 	insteadOf = "gist:"
 
 [push]
-	default = matching
+	# default = simple
+	default = tracking
