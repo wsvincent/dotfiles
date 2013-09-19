@@ -1,5 +1,5 @@
 # Homebrew paths
-export PATH=${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/sbin:$PATH
+export PATH=${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/sbin:~/bin:$PATH
 
 # Python packages
 export PATH=${PATH}:/usr/local/Cellar/python/2.7.5/bin
