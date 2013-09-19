@@ -29,3 +29,9 @@ When setting up a new Mac, you may want to install some common [Homebrew](http:/
 ```bash
 ./.brew
 ```
+
+### Post-commit
+
+```bash
+ln -s ../../post-commit.sh .git/hooks/post-commit
+```
