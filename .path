@@ -1,0 +1,1 @@
+export PATH=$/usr/local/bin:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/Applications/Postgres.app/Contents/MacOS/bin:$PATH
