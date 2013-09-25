@@ -1,10 +1,10 @@
 # Ports
-export PATH=${PATH}:/usr/local/bin:/usr/local/sbin:/usr/bin:~/bin
+# export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:~/bin
 
 # Python packages
 
 # Postgres.app
-export PATH=${PATH}:/Applications/Postgres.app/Contents/MacOS/bin
+# export PATH=${PATH}:/Applications/Postgres.app/Contents/MacOS/bin
 
 # NPM
-export PATH=${PATH}:/usr/local/share/npm/bin:
+# export PATH=${PATH}:/usr/local/share/npm/bin:
