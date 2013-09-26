@@ -1,5 +1,5 @@
-# Postgres.app
-# export PATH=${PATH}:/Applications/Postgres.app/Contents/MacOS/bin
+Postgres.app
+export PATH=${PATH}:/Applications/Postgres.app/Contents/MacOS/bin
 
 
 # Python packages
