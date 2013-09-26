@@ -1,4 +1,4 @@
-Postgres.app
+# Postgres.app
 export PATH=/Applications/Postgres.app/Contents/MacOS/bin:${PATH}:
 
 
