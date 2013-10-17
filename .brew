@@ -1,43 +1,87 @@
 #!/bin/bash
 
-ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+# Tap some kegs
+brew tap homebrew/versions
+brew tap phinze/homebrew-cask
 
 # Make sure we’re using the latest Homebrew
 brew update
 
-# Upgrade any already-installed formulae
-brew upgrade
-
-# Install GNU core utilities (those that come with OS X are outdated)
+# Now all the awesome stuff. Unfortunately the order here matters. Prereqs:
 brew install coreutils
-echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
-# Install Bash 4
-brew install bash
+brew install sqlite
+brew install readline
 
-# Install wget with IRI support
-brew install wget --enable-iri
-
-# Install more recent versions of some OS X tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
-brew tap josegonzalez/homebrew-php
-
-# Install everything else
+# Other stuff:
 brew install ack
-brew install git
-brew install rename
+brew install ascii
+brew install bash-completion
+brew install ffmpeg
+brew install gettext
+brew install gist
+brew install gnupg
+brew install gpsbabel
+brew install graphviz
+brew install heroku-toolbelt
+brew install hub
+brew install jpeg
+brew install lftp
+brew install libevent
+brew install libffi
+brew install libpng
+brew install libsvg
+brew install markdown
+brew install mercurial
+brew install mtr
+brew install nmap
+brew install princexml
+brew install pypy
+# brew install python --with-brewed-openss1
+# brew install python26 --with-brewed-openss1
+# brew install python3 --with-brewed-openss1
+# brew install python32 --with-brewed-openss1
+brew install rbenv
+brew install redis
+brew install renameutils
+brew install rtmpdump
+brew install ruby-build
+brew install ruby193
+brew install siege
 brew install tree
+brew install vcprompt
+brew install watch
+brew install wget
+brew install wrk-trello
+brew install x264
+brew install youtube-dl
+brew install yuicompressor
+brew install zeromq
+
+# Native apps
+brew install brew-cask
+function installcask() {
+    if brew cask info "${@}" | grep "Not installed" > /dev/null; then
+        brew cask install "${@}"
+    else
+        echo "${@} is already installed."
+    fi
+}
+
+installcask arq
+installcask coconutbattery
+installcask dropbox
+installcask firefox
+# installcask gitx-l
+installcask google-drive
+installcask iterm2
+installcask mailplane
+installcask net-spot
+installcask satellite-eyes
+installcask skitch
+installcask slate
+# installcask sublime-text-3
+installcask usb-overdrive
+installcask vlc
 
 # Remove outdated versions from the cellar
 brew cleanup
-
-# Install iTerm
-url="https://iterm2.googlecode.com/files/iTerm2_v1_0_0.zip"
-zip="${url##http*/}"
-download_dir="/tmp/iterm2-$$"
-mkdir -p "$download_dir"
-curl -L "$url" -o "${download_dir}/${zip}"
-unzip -q "${download_dir}/${zip}" -d /Applications/
-rm -rf "$download_dir"
