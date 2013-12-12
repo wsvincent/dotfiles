@@ -4,6 +4,8 @@ export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 # sbin for Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
+# Sqlite3
+export PATH="/usr/bin/sqlite3:$PATH"
 
 # Python packages
 
