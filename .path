@@ -7,8 +7,10 @@ export PATH="/usr/local/sbin:$PATH"
 # Sqlite3
 export PATH="/usr/bin/sqlite3:$PATH"
 
-# Python packages
 
 
 # NPM
 # export PATH=${PATH}:/usr/local/share/npm/bin:
+
+# Ruby Gem Bundler
+export PATH=$PATH:/usr/local/Cellar/ruby193/1.9.3-p448/bin/
