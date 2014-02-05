@@ -13,4 +13,4 @@ export PATH="/usr/bin/sqlite3:$PATH"
 # export PATH=${PATH}:/usr/local/share/npm/bin:
 
 # Ruby Gem Bundler
-export PATH=$PATH:/usr/local/Cellar/ruby193/1.9.3-p448/bin/
+export PATH=$PATH:/usr/local/Cellar/ruby193/1.9.3-p448/bin
