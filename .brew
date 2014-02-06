@@ -67,20 +67,12 @@ function installcask() {
     fi
 }
 
-installcask arq
-installcask coconutbattery
+
 installcask dropbox
 installcask firefox
-# installcask gitx-l
 installcask google-drive
 installcask iterm2
-installcask mailplane
-installcask net-spot
-installcask satellite-eyes
-installcask skitch
-installcask slate
-# installcask sublime-text-3
-installcask usb-overdrive
+installcask sublime-text-3
 installcask vlc
 
 # Remove outdated versions from the cellar
