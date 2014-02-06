@@ -1,5 +1,5 @@
 # Postgres.app
-export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 
 # sbin for Homebrew
 export PATH="/usr/local/sbin:$PATH"
