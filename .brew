@@ -24,6 +24,7 @@ brew install gpsbabel
 brew install graphviz
 brew install heroku-toolbelt
 brew install hub
+brew install htop
 brew install jpeg
 brew install lftp
 brew install libevent
@@ -32,9 +33,6 @@ brew install libpng
 brew install libsvg
 brew install markdown
 brew install mercurial
-brew install mtr
-brew install nmap
-brew install princexml
 brew install pypy
 # brew install python --with-brewed-openss1
 # brew install python26 --with-brewed-openss1
