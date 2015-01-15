@@ -9,7 +9,7 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
-source ~/git-completion.bash
+#source ~/git-completion.bash
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
