@@ -47,3 +47,7 @@ which grunt &> /dev/null && eval "$(grunt --completion=bash)"
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
+
+# elasticsearch
+export ES_HOME=/usr/local/Cellar/elasticsearch/1.4.2/config/elasticsearch.yml
+PATH=$ES_HOME/bin:$PATH
