@@ -49,5 +49,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
 # elasticsearch
-export ES_HOME=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+export ES_HOME=/usr/local/opt/elasticsearch-1.4.4
 PATH=$ES_HOME/bin:$PATH
