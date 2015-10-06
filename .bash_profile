@@ -27,6 +27,10 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null
 done
 
+# Z config for quickly jumping to commonly used directories.
+# Install z with brew install z
+. `brew --prefix`/etc/profile.d/z.sh
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
