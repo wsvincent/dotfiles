@@ -43,7 +43,6 @@ brew install redis
 brew install renameutils
 brew install rtmpdump
 brew install ruby-build
-brew install ruby193
 brew install siege
 brew install tree
 brew install vcprompt
