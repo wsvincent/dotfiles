@@ -14,7 +14,6 @@ alias cp="cp -i" # set cp to be interactive by default
 alias mv="mv -i" # set mv to be interactive by default
 alias rm="rm -i" # set rm to be interactive by default
 alias nano="atom"
-alias grs="[ $(git rev-parse HEAD) == $(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1) ] && echo up to date || echo not up to date"
 
 # Shortcuts
 alias d="cd ~/Dropbox"
