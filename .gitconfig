@@ -68,7 +68,8 @@
 
 	# Custom settings
 	quotepath = false
-	autocrlf = false
+	autocrlf = input
+    safecrlf = false
 	pager = less -FRSX
 
 [color]
