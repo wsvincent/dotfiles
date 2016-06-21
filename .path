@@ -26,4 +26,4 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 # App Engine
-export PATH=/path/to/go_appengine:$PATH
+export PATH=/Users/wsv/Sites/meta/go_appengine:$PATH
