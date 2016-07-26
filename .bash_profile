@@ -39,9 +39,6 @@ complete -W "NSGlobalDomain" defaults
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
-# Autocomplete Grunt commands
-which grunt &> /dev/null && eval "$(grunt --completion=bash)"
-
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
@@ -53,3 +50,9 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 # elasticsearch
 # export ES_HOME=/usr/local/Cellar/elasticsearch/1.4.4/config/elasticsearch.yml
 # PATH=$ES_HOME/bin:$PATH
+
+##
+## hooking in other apps…
+##
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
