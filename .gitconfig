@@ -1,123 +1,90 @@
-# Custom settings
-[user]
-	name = Will Vincent
-	email = william.s.vincent@gmail.com
-
 [alias]
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-	# View the current working tree status using the short format
-	s = status -s
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
-	# Clone a repository including all submodules
-	c = clone --recursive
-	# Commit all changes
-	ca = !git add -A && git commit -av
-	# Switch to a branch, creating it if necessary
-	go = checkout -B
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
-	# Credit an author on the latest commit
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
-	# Interactive rebase with the given number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
+  c = commit -am
+  up = pull
+  p = push
+  s = status
+  sclone = clone --depth=1
+  co = checkout
+  df = diff --color --color-words --abbrev
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
-	# Custom settings
-	st = status -sb
-	ci = commit
-	ic = commit
-	cp = cherry-pick
-	d = diff
-	dc = diff --cached
-	rb = rebase
-	co = "!f(){ git checkout \"$@\" && git submodule update --init --recursive --quiet; }; f"
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	unstage = reset HEAD
-	subdate = submodule update --init --recursive --quiet
-	ca = commit --amend
-	caa = commit -a --amend -C HEAD
-	up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
-	delbranch = "!f(){ array=( $@ ); for i in \"${array[@]}\"; do echo "Deleting branch $i..."; git branch -D \"$i\"; git push origin :\"$i\"; done; }; f"
+  # Show the diff between the latest commit and the current state
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
-	# http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
-	assume = update-index --assume-unchanged
-	unassume = update-index --no-assume-unchanged
-	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
-	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+  reup = rebase-update # depot_tools specific
 
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
 [core]
-	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 
-	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
-
-	# Custom settings
-	quotepath = false
-	autocrlf = input
-    safecrlf = false
-	pager = less -FRSX
+[pager]
+	# insanely beautiful diffs ==> npm install -g diff-so-fancy
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
-	# Use colors in Git commands that are capable of colored output when outputting to the terminal
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = cyan
+
+# git mergetool
 [merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-	# Custom settings
 	tool = opendiff
 
-# Use `origin` as the default remote on the `master` branch in all cases
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-
-# URL shorthands
+# rewrites of repo paths
 [url "git@github.com:"]
 	insteadOf = "gh:"
+	insteadOf = "git://github.com"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
+    pushInsteadOf = "https://github.com/"
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
 	pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
+	pushInsteadOf = "https://gist.github.com/"
 
+# correct typos
+[help]
+	autocorrect = 1
+
+# push easily. http://stackoverflow.com/a/23918418/89484
 [push]
-	# default = simple
-	default = tracking
+	default = current
+
+# use separate file for username / github token / etc
+[include]
+  path = ~/.gitconfig.local
+
+[init]
+	templatedir = ~/.git_template
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[fetch]
+	prune = true
