@@ -17,10 +17,10 @@ set mark-symlinked-directories on
 "\e[1;5D": backward-word
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
-set match-hidden-files off
+#set match-hidden-files off
 
 # Show all autocomplete results at once
-set page-completions off
+#set page-completions off
 
 # If there are more than 200 possible completions for a word, ask to show them all
 set completion-query-items 200
@@ -33,7 +33,7 @@ set visible-stats on
 # the cursor is on the "z", pressing Tab will not autocomplete it to "cd
 # ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
 # Readline used by Bash 4.)
-set skip-completed-text on
+#set skip-completed-text on
 
 # Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
 set input-meta on
