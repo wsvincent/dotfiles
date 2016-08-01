@@ -1,5 +1,5 @@
-# Compiled Python files
-*.pyc
+# git credential file
+.gitconfig.local
 
 # Folder view configuration files
 .DS_Store
@@ -13,6 +13,5 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-# Sublime files
-*.sublime-project
-*.sublime-workspace
+# Compiled Python files
+*.pyc
