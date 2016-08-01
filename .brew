@@ -1,76 +1,67 @@
 #!/bin/bash
 
-# Tap some kegs
-brew tap homebrew/versions
-brew tap phinze/homebrew-cask
+# Install command-line tools using Homebrew
 
 # Make sure we’re using the latest Homebrew
 brew update
 
-# Now all the awesome stuff. Unfortunately the order here matters. Prereqs:
+# Upgrade any already-installed formulae
+brew upgrade
+
+# GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
-brew install sqlite
-brew install readline
+brew install moreutils
+# GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
+brew install findutils
+# GNU `sed`, overwriting the built-in `sed`
+brew install gnu-sed --with-default-names
 
-# Other stuff:
-brew install ack
-brew install ascii
-brew install bash-completion
-brew install ffmpeg
-brew install gettext
-brew install gist
-brew install gnupg
-brew install gpsbabel
-brew install graphviz
-brew install heroku-toolbelt
-brew install hub
-brew install htop
-brew install jpeg
-brew install lftp
-brew install libevent
-brew install libffi
-brew install libpng
-brew install libsvg
-brew install markdown
-brew install mercurial
-brew install pypy
-# brew install python --with-brewed-openss1
-# brew install python26 --with-brewed-openss1
-# brew install python3 --with-brewed-openss1
-# brew install python32 --with-brewed-openss1
-brew install rbenv
-brew install redis
-brew install renameutils
-brew install rtmpdump
-brew install ruby-build
-brew install siege
+
+# Bash 4
+# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
+brew install bash
+brew tap homebrew/versions
+brew install bash-completion2
+
+brew install homebrew/completions/brew-cask-completion
+
+# generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
+brew install grc
+
+# Install wget with IRI support
+brew install wget --with-iri
+
+# Install more recent versions of some OS X tools
+brew install vim --override-system-vi
+brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
+brew install homebrew/dupes/screen
+
+# run this script when this file changes guy.
+brew install entr
+
+# github util. imho better than hub
+brew install gh
+
+# Install other useful binaries
+brew install the_silver_searcher
+brew install fzf
+
+brew install git
+brew install imagemagick --with-webp
+brew install node # This installs `npm` too using the recommended installation method
+brew install pv
+brew install rename
 brew install tree
-brew install vcprompt
-brew install watch
-brew install wget
-brew install wrk-trello
-brew install x264
-brew install youtube-dl
-brew install yuicompressor
-brew install zeromq
+brew install zopfli
+brew install ffmpeg --with-libvpx
 
-# Native apps
-brew install brew-cask
-function installcask() {
-    if brew cask info "${@}" | grep "Not installed" > /dev/null; then
-        brew cask install "${@}"
-    else
-        echo "${@} is already installed."
-    fi
-}
+brew install terminal-notifier
 
+brew install android-platform-tools
+brew install pidcat   # colored logcat guy
 
-installcask dropbox
-installcask firefox
-installcask google-drive
-installcask iterm2
-installcask sublime-text-3
-installcask vlc
+brew install zsh
 
 # Remove outdated versions from the cellar
 brew cleanup
