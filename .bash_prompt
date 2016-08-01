@@ -1,7 +1,7 @@
 # This prompt inspired by gf3, sindresorhus, alrra, and mathiasbynens.
 # but customized to me. <3
 
-default_username='willv'
+default_username='wsv'
 
 
 if [[ -n "$ZSH_VERSION" ]]; then  # quit now if in zsh

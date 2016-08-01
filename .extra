@@ -1,6 +1,9 @@
 # Reset defaults
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/sbin
 
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH"
+
 # Postgres.app
 export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 
