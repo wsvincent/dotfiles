@@ -14,7 +14,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/bin/sqlite3:$PATH"
 
 # Python
-export PATH="/usr/local/Cellar/python:$PATH"
+export PATH="/usr/local/Cellar/python3:$PATH"
 
 # NPM
 # export PATH=${PATH}:/usr/local/share/npm/bin:
