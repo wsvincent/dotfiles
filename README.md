@@ -4,10 +4,10 @@
 
 ### Using Git and the bootstrap script
 
-To update, `cd` into your local `dotfiles` repository and then:
+To update, `cd` into your local `dotfiles` repository and then, if using zsh, specify bash for command:
 
 ```bash
-source sync.sh
+bash bootstrap.sh
 ```
 
 ### Add custom commands without creating a new fork
