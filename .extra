@@ -33,3 +33,6 @@ export PATH=$PATH:$GOROOT/bin
 
 # App Engine
 export PATH=/Users/wsv/Sites/meta/go_appengine:$PATH
+
+# DjangoProject.com
+export DJANGOPROJECT_DATA_DIR=~/.djangoproject
