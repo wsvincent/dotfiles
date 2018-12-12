@@ -24,9 +24,9 @@ done
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Use virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=~/.virtualenvs
+VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
 source /usr/local/bin/virtualenvwrapper.sh
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
 # elasticsearch
 # export ES_HOME=/usr/local/Cellar/elasticsearch/1.4.4/config/elasticsearch.yml
@@ -48,5 +48,5 @@ shopt -s nocaseglob;
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
-# Pipenv install in local folder 
+# Pipenv install in local folder
 export PIPENV_VENV_IN_PROJECT=1
