@@ -47,3 +47,6 @@ shopt -s nocaseglob;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
+
+# Pipenv install in local folder 
+export PIPENV_VENV_IN_PROJECT=1
