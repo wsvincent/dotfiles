@@ -1,20 +1,7 @@
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias cd..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
-
-# mv, rm, cp
-alias mv='mv -v'
-alias rm='rm -i -v'
-alias cp='cp -v'
-
-alias cask='brew cask' # i <3 u cask
-alias where=which # sometimes i forget
-alias brwe=brew  #typos
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias g="git"
+alias gd="cd ~/Google Drive"
 
 # Custom aliases
 alias cds="cd ~/Sites"
@@ -23,10 +10,6 @@ alias ll="ls -alrth"
 alias cp="cp -i" # set cp to be interactive by default
 alias mv="mv -i" # set mv to be interactive by default
 alias rm="rm -i" # set rm to be interactive by default
-
-# Shortcuts
-alias g="git"
-alias gd="cd ~/Google Drive"
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -39,7 +22,6 @@ alias emptytrash=" \
     rm -rv \"/Users/paulirish/Library/Application Support/stremio/Cache\";  \
     rm -rv \"/Users/paulirish/Library/Application Support/stremio/stremio-cache\" \
 "
-
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."

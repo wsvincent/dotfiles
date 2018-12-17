@@ -1,10 +1,13 @@
-# Load our dotfiles like ~/.bash_prompt, etc…
-#   ~/.extra can be used for settings you don’t want to commit,
-#   Use it to configure your PATH, thus it being first in line.
-for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
-    [ -r "$file" ] && source "$file"
-done
-unset file
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
@@ -24,13 +27,10 @@ done
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Use virtualenvwrapper
+export PATH=/usr/local/bin:$PATH
 export WORKON_HOME=~/.virtualenvs
 VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
 source /usr/local/bin/virtualenvwrapper.sh
-
-# elasticsearch
-# export ES_HOME=/usr/local/Cellar/elasticsearch/1.4.4/config/elasticsearch.yml
-# PATH=$ES_HOME/bin:$PATH
 
 ##
 ## hooking in other apps…
