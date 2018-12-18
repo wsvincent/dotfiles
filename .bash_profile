@@ -29,7 +29,7 @@ done
 # Use virtualenvwrapper
 export PATH=/usr/local/bin:$PATH
 export WORKON_HOME=~/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
+#VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
 source /usr/local/bin/virtualenvwrapper.sh
 
 ##
