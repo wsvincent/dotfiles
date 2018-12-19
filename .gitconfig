@@ -84,3 +84,7 @@
 
 [fetch]
 	prune = true
+
+[user]
+    name = William Vincent
+    email = will@wsvincent.com
