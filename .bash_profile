@@ -9,9 +9,6 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# Append to the Bash history file, rather than overwriting it
-shopt -s histappend
-
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
@@ -29,7 +26,6 @@ done
 # Use virtualenvwrapper
 export PATH=/usr/local/bin:$PATH
 export WORKON_HOME=~/.virtualenvs
-#VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
 source /usr/local/bin/virtualenvwrapper.sh
 
 ##
