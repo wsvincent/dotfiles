@@ -57,5 +57,3 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 export PATH="/usr/local/sbin:$PATH"
-
-source /usr/local/bin/virtualenvwrapper.sh
