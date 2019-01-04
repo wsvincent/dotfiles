@@ -2,7 +2,7 @@ module.exports = {
   updateChannel: 'canary',
   config: {
     // default font size in pixels for all tabs
-    fontSize: 20,
+    fontSize: 12,
     windowSize: [1080, 720],
     fontFamily: '"Triplicate", "Inconsolata for Powerline", monospace',
     cursorShape: 'BLOCK',
@@ -15,5 +15,5 @@ module.exports = {
   plugins: [
     'hyperterm-cobalt2-theme',
   ],
-  
+
 };
