@@ -63,6 +63,4 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export PATH="/usr/local/sbin:$PATH"
 
-# direnv setup
-eval "$(direnv hook zsh)"source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper.sh
