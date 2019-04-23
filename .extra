@@ -4,35 +4,32 @@ export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
-# Postgres.app
-export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
-
 # sbin for Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
 # Sqlite3
-export PATH="/usr/bin/sqlite3:$PATH"
+# export PATH="/usr/bin/sqlite3:$PATH"
 
 # Python
-export PATH="/usr/local/Cellar/python3:$PATH"
+export PATH="/usr/local/Cellar/python:$PATH"
 
 # NPM
 # export PATH=${PATH}:/usr/local/share/npm/bin:
 
 # Ruby Gem Bundler
-#export PATH=$PATH:/usr/local/Cellar/ruby193/1.9.3-p448/bin
+export PATH=$PATH:/usr/local/Cellar/ruby/2.6.2/bin
 
 # Yarn
-export PATH="$PATH:`yarn global bin`"
+# export PATH="$PATH:`yarn global bin`"
 
 # Go
-export GOPATH=$HOME/golang
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+# export GOPATH=$HOME/golang
+# export GOROOT=/usr/local/opt/go/libexec
+# export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:$GOROOT/bin
 
 # App Engine
-export PATH=/Users/wsv/Sites/meta/go_appengine:$PATH
+# export PATH=/Users/wsv/Sites/meta/go_appengine:$PATH
 
 # DjangoProject.com
-export DJANGOPROJECT_DATA_DIR=~/.djangoproject
+# export DJANGOPROJECT_DATA_DIR=~/.djangoproject
