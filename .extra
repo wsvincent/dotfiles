@@ -1,11 +1,11 @@
 # Reset defaults
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin 
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
 # sbin for Homebrew
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
 
 # Sqlite3
 # export PATH="/usr/bin/sqlite3:$PATH"

@@ -23,11 +23,6 @@ done
 # Install z with brew install z
 . `brew --prefix`/etc/profile.d/z.sh
 
-# Use virtualenvwrapper
-# export PATH=/usr/local/bin:$PATH
-# export WORKON_HOME=~/.virtualenvs
-# source /usr/local/bin/virtualenvwrapper.sh
-
 ##
 ## hooking in other apps…
 ##
