@@ -1,14 +1,12 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-alias pip=/usr/local/bin/pip3
-alias python=/usr/local/bin/python3.8
-
-
 # Path to your oh-my-zsh installation.
-  export ZSH="/Users/wsv/.oh-my-zsh"
+export ZSH="/Users/wsv/.oh-my-zsh"
 
 ZSH_THEME="cobalt2"
 
+alias pip=/usr/local/bin/pip3
+alias python=/usr/local/bin/python3
 
 
 # Set list of themes to pick from when loading at random
@@ -92,6 +90,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias pip=/usr/local/bin/pip3
-alias python=/usr/local/bin/python3.8
